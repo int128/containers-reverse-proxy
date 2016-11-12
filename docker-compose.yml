@@ -1,0 +1,18 @@
+version: "2"
+
+services:
+  nginx:
+    build: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - /etc/nginx/conf.d/map
+
+  generator:
+    build: generator
+    command: -notify-sighup containersreverseproxy_nginx_1 -watch /nginx.tmpl /etc/nginx/conf.d/map/generated
+    volumes_from:
+      - nginx
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
