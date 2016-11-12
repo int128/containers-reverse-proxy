@@ -1,4 +1,4 @@
-# Containers Reverse Proxy
+# Containers Reverse Proxy [![CircleCI](https://circleci.com/gh/int128/containers-reverse-proxy.svg?style=shield)](https://circleci.com/gh/int128/containers-reverse-proxy)
 
 A reverse proxy for routing Docker containers using nginx and [docker-gen](https://github.com/jwilder/docker-gen).
 
