@@ -64,6 +64,8 @@ proxy_set_header Proxy "";
             {{ $address := where $container.Addresses "Port" $port | first }}
             {{ template "upstream" (dict "Container" $container "Address" $address "Network" $containerNetwork) }}
           {{ end }}
+        {{ else }}
+          server 0.0.0.0;
         {{ end }}
       {{ end }}
     {{ end }}
