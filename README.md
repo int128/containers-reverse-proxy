@@ -42,6 +42,15 @@ networks:
       name: containersreverseproxy_default
 ```
 
+## Register init script
+
+We provide the init script for LSB. Register as follows:
+
+```sh
+sudo ln -s /opt/containers-reverse-proxy/init-lsb.sh /etc/init.d/containers-reverse-proxy
+sudo chkconfig --add containers-reverse-proxy
+```
+
 ## Contribution
 
 This is an open source software licensed under Apache-2.0. Feel free to open issues or pull requests.
